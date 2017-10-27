@@ -1,5 +1,7 @@
 <?php
 
+use pti\yiimailer\YiiMailer;
+
 class SiteController extends Controller
 {
 	/**
@@ -59,7 +61,7 @@ class SiteController extends Controller
 			{
 				//use 'contact' view from views/mail
 				$mail = new YiiMailer('contact', array('message' => $model->body, 'name' => $model->name, 'description' => 'Contact form'));
-				
+
 				//set properties
 				$mail->setFrom($model->email, $model->name);
 				$mail->setSubject($model->subject);
@@ -70,7 +72,7 @@ class SiteController extends Controller
 				} else {
 					Yii::app()->user->setFlash('error','Error while sending email: '.$mail->getError());
 				}
-				
+
 				$this->refresh();
 			}
 		}

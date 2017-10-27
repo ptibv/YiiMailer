@@ -1,0 +1,14 @@
+{
+    "name": "ptibv/yiimailer",
+    "description": "Yii extension for sending emails with layouts using PHPMailer",
+    "autoload": {
+        "psr-4": {
+            "pti\\yiimailer\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.0.0",
+        "phpmailer/phpmailer": "5.2.*",
+        "yiisoft/yii": "*"
+    }
+}

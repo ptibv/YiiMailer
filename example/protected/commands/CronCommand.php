@@ -1,4 +1,7 @@
 <?php
+
+use pti\yiimailer\YiiMailer;
+
 class CronCommand extends CConsoleCommand
 {
 	public function getHelp()
@@ -10,12 +13,12 @@ class CronCommand extends CConsoleCommand
 	{
 		//Do some cron processing...
 		$cronResult="Cron job finished successfuly";
-		
+
 		$mail = new YiiMailer;
 		//use "cron" view from views/mail
 		$mail->setView('cron');
 		$mail->setData(array('message' => $cronResult, 'name' => get_class($this), 'description' => 'Cron job', 'mailer' => $mail));
-		
+
 		//set properties
 		$mail->setFrom('from@example.com', 'Console application');
 		$mail->setSubject($cronResult);
