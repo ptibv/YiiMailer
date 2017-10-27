@@ -1,4 +1,9 @@
 <?php
+
+namespace pti\yiimailer;
+
+use Yii;
+
 /**
  * YiiMailer class - wrapper for PHPMailer
  * Yii extension for sending emails using views and layouts
@@ -20,14 +25,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  *
  *
- * @package YiiMailer
+ * @package pti\YiiMailer\YiiMailer
  * @author Vernes Šiljegović
  * @copyright  Copyright (c) 2014 YiiMailer
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
  * @version 1.6, 2014-07-09
  */
-
-
 class YiiMailer extends PHPMailer
 {
 
