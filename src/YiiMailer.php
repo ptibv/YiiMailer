@@ -3,6 +3,7 @@
 namespace pti\yiimailer;
 
 use Yii;
+use PHPMailer;
 
 /**
  * YiiMailer class - wrapper for PHPMailer
