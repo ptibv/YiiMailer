@@ -504,7 +504,7 @@ class YiiMailer extends PHPMailer
             if (isset(Yii::app()->controller))
                 return Yii::app()->controller->renderFile($viewFile, $viewData, true);
             else {
-                $controller = new CController(__CLASS__);
+                $controller = new \CController(__CLASS__);
                 return $controller->renderInternal($viewFile, $viewData, true);
             }
         } else {
