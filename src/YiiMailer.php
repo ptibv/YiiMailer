@@ -3,7 +3,8 @@
 namespace pti\yiimailer;
 
 use Yii;
-use PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
 
 /**
  * YiiMailer class - wrapper for PHPMailer
@@ -327,7 +328,7 @@ class YiiMailer extends PHPMailer
      */
     public function setFrom($address, $name = '', $auto = true)
     {
-        return parent::SetFrom($address, $name, (int)$auto);
+        return parent::setFrom($address, $name, (bool)$auto);
     }
 
     /**
@@ -570,7 +571,7 @@ class YiiMailer extends PHPMailer
                 return $this->save();
             else
                 return $this->PostSend();
-        } catch (phpmailerException $e) {
+        } catch (PHPMailerException $e) {
             $this->mailHeader = '';
             $this->SetError($e->getMessage());
             if ($this->exceptions) {
